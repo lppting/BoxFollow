@@ -1,0 +1,48 @@
+<html>
+     <head>
+      <title>我不是药神实时票房</title>
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='main.css')}}"/>
+     </head>
+     <body>
+<script type="text/javascript" src="/static/js/ball.js"></script>
+<div class="main">
+  <div class="name">
+      <span id="t1"></span>
+  </div>
+  <div class="box">
+      <span id="t2"></span>
+  </div>
+  <div class="sumbox">
+      <span id="t3"></span>
+  </div>
+  <div class="last">
+      <span id="t4"></span>
+  </div>
+</div>
+<script type="text/javascript">
+setInterval("show_data()",2000);
+function show_data(){
+          var xhr = new XMLHttpRequest();
+          xhr.open("GET","/get_json",true);
+          xhr.setRequestHeader('content-type','aplication/json');
+          xhr.onreadystatechange = function()
+          {
+        if (xhr.readyState == 4)
+        {
+        if (xhr.status == 200) {
+            var data = JSON.parse(xhr.responseText);
+            var data1 = {'a':1,'b':2};
+//            console.log(data1);
+//            console.log(data);
+            document.getElementById("t1").innerHTML = data.movieName;
+            document.getElementById("t2").innerHTML = "实时票房:" + data.boxInfo + "万";
+            document.getElementById("t3").innerHTML = "总票房:" + data.sumBoxInfo;
+            document.getElementById("t4").innerHTML = "观看人次:" + data.viewInfoV2;
+        }
+        }
+}
+        xhr.send('ok');
+}
+</script>
+</body>
+</html>

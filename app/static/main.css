@@ -1,0 +1,39 @@
+body{
+    width:100%;
+    height:100%;
+//    text-align:center;
+}
+div.main{
+   width:100%;
+   height:100%;
+   text-align:center;
+   margin-top:25%;
+   padding:0px;
+   top:50%;
+}
+div.name{
+    display: inline-block;
+    vertical-align: top;
+    color:#457732;
+    margin-bottom: 70px;
+    font-size:50px;
+}
+div.box{
+    vertical-align: top;
+    color: #FF6a00;
+    font-size: 3.6rem;
+}
+div.sumbox{
+    vertical-align: top;
+    color:#457732;
+    font-size:50px;
+//    margin-left: -136px;
+}
+
+div.last{
+    display: inline-block;
+    vertical-align: top;
+    color:#457732;
+    font-size:50px;
+//    margin-left: -86px;
+}
